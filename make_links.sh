@@ -6,4 +6,5 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 find "$DOTFILES_DIR" \
     -maxdepth 1 \
     -not \( -path "${DOTFILES_DIR}/.git" -prune \) \
+    -name '.*' \
     -exec ln -s {} . \;
