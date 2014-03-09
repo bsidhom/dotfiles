@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-dot-file configuration files
+home-directory configuration files
