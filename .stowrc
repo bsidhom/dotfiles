@@ -1,2 +1,2 @@
---dir=/home/benjamin/opt/stow
---target=/home/benjamin/opt
+--dir=$HOME/opt/stow
+--target=$HOME/opt

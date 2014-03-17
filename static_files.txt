@@ -2,4 +2,3 @@
 .bashrc
 .profile
 .screenrc
-.stowrc
