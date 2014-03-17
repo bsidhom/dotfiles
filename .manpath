@@ -1,4 +1,4 @@
-MANPATH_MAP /home/benjamin/opt/bin /home/benjamin/opt/man
-MANPATH_MAP /home/benjamin/opt/bin /home/benjamin/opt/share/man
-MANPATH_MAP /home/benjamin/opt/sbin /home/benjamin/opt/man
-MANPATH_MAP /home/benjamin/opt/sbin /home/benjamin/opt/share/man
+MANPATH_MAP $HOME/opt/bin $HOME/opt/man
+MANPATH_MAP $HOME/opt/bin $HOME/opt/share/man
+MANPATH_MAP $HOME/opt/sbin $HOME/opt/man
+MANPATH_MAP $HOME/opt/sbin $HOME/opt/share/man

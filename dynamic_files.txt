@@ -1,0 +1,2 @@
+.manpath
+.stowrc
