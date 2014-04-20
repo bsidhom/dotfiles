@@ -1,37 +1,57 @@
-# C-a :source .screenrc
+# .screenrc
+# Ben Sidhom
 
 startup_message off
 vbell off
 defscrollback 10000
 defutf8 on
 nonblock on
+term screen-256color
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars
 
-#backtick 1 60 120 get_batt.sh
-
-shelltitle "$ |bash"
-hardstatus alwayslastline
-# HARDSTATUS KEY (info screen 'String Escapes')
+# QUICK REFERENCE
+#
+# BACKTICKS
+# backtick syntax is as follows:
+#   backtick <id> <lifespan> <autorefresh> <command> [args]
+# - the backtick is assigned the given numerical ID (used as a quantifier to '`' in
+#   '%'-expressions in hardstatus
+# - backtick expressions may set the lifespan and refresh rate to 0; in this
+#   case, the backtick command is expected to run continuously; every time a new
+#   line of text is output, this output immedidately replaces the previous
+#   output of '%`'
+# - some examples:
+#   backtick 0 0 0 echo '-n' 'hello'
+#   backtick 1 60 120 get_batt.sh
+#   backtick 2 0 0 count_up.sh
+#
+# HARDSTATUS KEY (check out 'STRING ESCAPES' section in the man pages)
 # %{= kg} green text on black background
-# %{Y} yellow text
-# $H hostname
+# %{Y} bright yellow text
+# %0` execute backtick 0
+# %{-} pop the color stack
+# %H hostname
 # %{g} green text
 # %= hfill
 # %{w} white text
-# %?predicate-display%?
-#  if a %-expression in predicate-dispaly is empty, print predicate-display
-# %-Lw all window numbers and long-names before current window
+# %?conditional_display%?
+#   show conditional_display iff a '%'-expression inside is nonempty
+# %?conditional_display%:else_display%?
+#   same as above, but show else_display if the first part has no non-empty
+#   '%'-expressions
+# %-Lw all window numbers and flags before current window
 # %n current window number
 # %t current window title
 # %u all other users on this window
-# %+Lw all window numbers and long-names after current window
+# %+Lw all window numbers and flags after current window
 # %D weekday name
 # %Y full year
 # %m month number
 # %d day number
 # %c current time in 24-hour format
-hardstatus string "%{= kg}[ %{Y}%H %{g}][%= %{w}%?%-Lw%?%{g}%n-%t%?(%u)%?%{w}%?%+Lw%?%?%= %{g}][%{y} %D %Y-%m-%d %c %{g}]"
-term screen-256color
 
-attrcolor b ".I"    # allow bold colors - necessary for some reason
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
-defbce on    # use current bg color for erased chars
+backtick 0 0 0 echo "$USER"
+hardstatus alwayslastline
+hardstatus string "%{= kg}[ %{y}%0`%{-}@%{r}%H %{-}][%= %{w}%-Lw%{g}(%n %t%? | %u%?)%{-}%+Lw %=%{-}][%{y} %D %Y-%m-%d %c %{-}]"
