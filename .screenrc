@@ -54,4 +54,5 @@ defbce on    # use current bg color for erased chars
 
 backtick 0 0 0 echo "$USER"
 hardstatus alwayslastline
+#hardstatus string "%{= kg}[ %{y}%H %{-}][%= %{w}%-Lw%{g}%n %t%?(%u)%?%{-}%+Lw %= %{-}][ %{y}%D %Y-%m-%d %c %{-}]"
 hardstatus string "%{= kg}[ %{y}%0`%{-}@%{r}%H %{-}][%= %{w}%-Lw%{g}(%n %t%? | %u%?)%{-}%+Lw %=%{-}][%{y} %D %Y-%m-%d %c %{-}]"
