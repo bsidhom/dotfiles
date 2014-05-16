@@ -8,6 +8,7 @@ alias pcss="pacaur -Ss"
 alias pcsy="pacaur -Sy"
 alias pcsyy="pacaur -Syy"
 alias pcsyu="pacaur -Syu"
+alais pcscc="pacaur -Scc" # clear package cache for uninstalled packages
 alias sshnone="ssh -oNoneSwitch=yes -oNoneEnabled=yes"
 alias scpnone="scp -oNoneSwitch=yes -oNoneEnabled=yes"
 alias rsyncnone="rsync -e 'ssh -oNoneSwitch=yes -oNoneEnabled=yes'"
