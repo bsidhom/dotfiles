@@ -12,6 +12,7 @@ alias pcsy="pacaur -Sy" # update package list; always follow by package update
                         # before installing new packages!
 alias pcsyy="pacaur -Syy" # force update package list
 alias pcsyu="pacaur -Syu" # update packages
+alais pcscc="pacaur -Scc" # clear package cache for uninstalled packages
 alias pcsi="pacaur -Si" # show dependencies
 alias pcu="pacaur -U" # install package from local binary tarball
 alias pcqu="pacaur -Qu" # list which packages have updates available
