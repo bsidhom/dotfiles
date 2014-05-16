@@ -15,6 +15,7 @@ alias pcsyu="pacaur -Syu" # update packages
 alais pcscc="pacaur -Scc" # clear package cache for uninstalled packages
 alias pcsi="pacaur -Si" # show dependencies
 alias pcu="pacaur -U" # install package from local binary tarball
+alias pcqs="pacaur -Qs" # search local packages
 alias pcqu="pacaur -Qu" # list which packages have updates available
 alias pcq="pacuar -Q" # list installed local packages
 
