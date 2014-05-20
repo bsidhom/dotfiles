@@ -1,5 +1,6 @@
 .bash_aliases
 .bashrc
+.fbtermrc
 .octaverc
 .profile
 .screenrc
