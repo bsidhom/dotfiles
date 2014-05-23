@@ -2,12 +2,16 @@
 # backup configuration files in the user's home directory to the given directory
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+read -r -p "enter backup directory: " BACKUP_DIR
 # get canonical path of given directory; 
 # doesn't work on systems where readlink -f doesn't work
-BACKUP_DIR=`readlink -f "$1"`
-if [ ! \( -d "$BACKUP_DIR" \) ] ; then
-    echo "must specify a backup directory (that already exists)"
-    exit 1
+while [[ -a "$BACKUP_DIR" && ! ( -d "$BACKUP_DIR" ) ]] ; do
+    BACKUP_DIR=`readlink -f "$BACKUP_DIR"` >/dev/null 2>&1
+    echo "backup directory '$BACKUP_DIR' exists and is not a directory"
+    read -r -p "Enter backup directory: " BACKUP_DIR
+done
+if [ ! \( -a "$BACKUP_DIR" \) ] ; then
+    mkdir "$BACKUP_DIR"
 fi
 
 pushd "$HOME" >/dev/null

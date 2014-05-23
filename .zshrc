@@ -1,19 +1,27 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '${HOME}/.zshrc'
+# Path to oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# oh-my-zsh configuration
+
+ZSH_THEME="cypher"
+DISABLE_AUTO_UPDATE="true"
+#DISABLE_CORRECTION="true"
+#COMPLETION_WAITING_DOTS="true"
+
+plugins=(cabal gitfast gnu-utils go golang gpg-agent lein node npm pep8 python rsync sbt scala screen sudo unison vi-mode)
+
+source $ZSH/oh-my-zsh.sh
+
+# user configuration
 
 if [ -f ~/.bash_aliases ] ; then
     source ~/.bash_aliases
 fi
+if [ -f ~/.zsh_aliases ] ; then
+    source ~/.zsh_aliases
+fi
 
-autoload -U colors && colors
-PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg_bold[red]%}%m%{$reset_color%}:%{$fg_bold[blue]%}%~%{$reset_color%}$ "
+if [ $(hash termdetect 2>/dev/null && hash perl 2>/dev/null && echo 0) ] ; then
+    export TERM="$(termdetect -t)"
+fi
+export EDITOR=vim
