@@ -49,6 +49,3 @@ export PS1='\[\033[00;32m\]\u\[\033[00;00m\]@\[\033[01;31m\]\h:\[\033[01;34m\]\w
 # vim-style keybindings
 set -o vi
 umask 0022
-
-PERL_MB_OPT="--install_base \"/home/bsidhom/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/bsidhom/perl5"; export PERL_MM_OPT;
