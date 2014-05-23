@@ -4,3 +4,4 @@
 .octaverc
 .profile
 .screenrc
+.zprofile

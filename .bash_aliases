@@ -24,5 +24,16 @@ alias sshnone="ssh -oNoneSwitch=yes -oNoneEnabled=yes"
 alias scpnone="scp -oNoneSwitch=yes -oNoneEnabled=yes"
 alias rsyncnone="rsync -e 'ssh -oNoneSwitch=yes -oNoneEnabled=yes'"
 
+# colored output
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
 # miscellaneous
 alias info="info --vi-keys"
