@@ -5,3 +5,4 @@
 .profile
 .screenrc
 .zprofile
+.zshrc
