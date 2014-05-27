@@ -21,15 +21,20 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 # NOTE: only works for systems with notify-send
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# enable dircolors support
+if [ $(hash dircolors 2>/dev/null && echo 0) ] ; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
+# set TERM using termdetect (if available)
+if [ $(hash termdetect 2>/dev/null && hash perl 2>/dev/null && echo 0) ] ; then
+    export TERM="$(termdetect -t)"
+fi
 
 # aliases
 if [ -f ~/.bash_aliases ]; then
@@ -48,8 +53,3 @@ export PS1='\[\033[00;32m\]\u\[\033[00;00m\]@\[\033[01;31m\]\h:\[\033[01;34m\]\w
 # vim-style keybindings
 set -o vi
 umask 0022
-
-if [ $(hash termdetect 2>/dev/null && hash perl 2>/dev/null && echo 0) ] ; then
-    export TERM="$(termdetect -t)"
-fi
-

@@ -21,7 +21,14 @@ if [ -f ~/.zsh_aliases ] ; then
     source ~/.zsh_aliases
 fi
 
+# set TERM based on termdetect result
 if [ $(hash termdetect 2>/dev/null && hash perl 2>/dev/null && echo 0) ] ; then
     export TERM="$(termdetect -t)"
 fi
+
+# enable dircolors support
+if [ $(hash dircolors 2>/dev/null && echo 0) ] ; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 export EDITOR=vim
