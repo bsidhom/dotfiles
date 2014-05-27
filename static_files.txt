@@ -1,5 +1,6 @@
 .bash_aliases
 .bashrc
+.dircolors
 .fbtermrc
 .octaverc
 .profile
