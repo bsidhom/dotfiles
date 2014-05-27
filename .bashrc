@@ -3,8 +3,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export TERM=$("$HOME/bin/termdetect" -t)
-
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -26,6 +24,7 @@ shopt -s checkwinsize
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -49,3 +48,8 @@ export PS1='\[\033[00;32m\]\u\[\033[00;00m\]@\[\033[01;31m\]\h:\[\033[01;34m\]\w
 # vim-style keybindings
 set -o vi
 umask 0022
+
+if [ $(hash termdetect 2>/dev/null && hash perl 2>/dev/null && echo 0) ] ; then
+    export TERM="$(termdetect -t)"
+fi
+
