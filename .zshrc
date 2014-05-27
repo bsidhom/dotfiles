@@ -8,7 +8,7 @@ DISABLE_AUTO_UPDATE="true"
 #DISABLE_CORRECTION="true"
 #COMPLETION_WAITING_DOTS="true"
 
-plugins=(cabal gitfast gnu-utils go golang gpg-agent lein node npm pep8 python rsync sbt scala screen sudo unison vi-mode)
+plugins=(cabal gitfast gnu-utils go golang lein node npm pep8 python rsync sbt scala screen sudo unison vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
