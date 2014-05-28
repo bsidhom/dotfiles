@@ -31,4 +31,10 @@ if [ $(hash dircolors 2>/dev/null && echo 0) ] ; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
+if [ "x$REMOTE_SESSION_TYPE" != "x1" ] ; then
+    # only use ANSI solarized Vim theme if we're in a local session
+    # (or if this environment variable has been pushed by the remote user)
+    export TERMINAL_SOLARIZED=1
+fi
+
 export EDITOR=vim

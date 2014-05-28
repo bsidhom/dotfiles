@@ -49,6 +49,12 @@ fi
 # interactive-session evironment variables
 export PS1='\[\033[00;32m\]\u\[\033[00;00m\]@\[\033[01;31m\]\h:\[\033[01;34m\]\w\[\033[00;00m\]$ ' 
 
+if [ "x$REMOTE_SESSION_TYPE" != "x1" ] ; then
+    # only use ANSI solarized Vim theme if we're in a local session
+    # (or if this environment variable has been pushed by the remote user)
+    export TERMINAL_SOLARIZED=1
+fi
+
 # general options
 # vim-style keybindings
 set -o vi
