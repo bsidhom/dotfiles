@@ -18,5 +18,11 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+# check if we're in an SSH session
+# (see http://unix.stackexchange.com/a/9607)
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  export REMOTE_SESSION_TYPE=1
+fi
+
 export PATH
 export USE_CCACHE=1
