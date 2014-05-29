@@ -8,7 +8,7 @@ DISABLE_AUTO_UPDATE="true"
 #DISABLE_CORRECTION="true"
 #COMPLETION_WAITING_DOTS="true"
 
-plugins=(cabal gitfast gnu-utils go golang lein node npm pep8 python rsync sbt scala screen sudo unison vi-mode zsh-syntax-highlighting)
+plugins=(cabal gnu-utils go golang lein node npm pep8 python rsync sbt scala unison vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,5 +36,3 @@ if [ "x$REMOTE_SESSION_TYPE" != "x1" ] ; then
     # (or if this environment variable has been pushed by the remote user)
     export TERMINAL_SOLARIZED=1
 fi
-
-export EDITOR=vim
