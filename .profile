@@ -6,8 +6,15 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+if [ -d "$HOME/go" ] ; then
+    export GOPATH="$HOME/go"
+fi
+
 # set PATH in order of increasing precedence
 # NOTE: all new path elements take higher precedence than sytem PATH
+if [ ! -z "$GOPATH" ] ; then
+    PATH="$GOPATH/bin:$PATH"
+fi
 if [ -d "$HOME/.local" ] ; then
     PATH="$HOME/.local/bin:$HOME/.local/sbin:$PATH"
 fi
