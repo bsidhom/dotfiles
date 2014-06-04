@@ -36,3 +36,5 @@ if [ "x$REMOTE_SESSION_TYPE" != "x1" ] ; then
     # (or if this environment variable has been pushed by the remote user)
     export TERMINAL_SOLARIZED=1
 fi
+
+setopt no_inc_append_history
