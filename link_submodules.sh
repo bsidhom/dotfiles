@@ -6,7 +6,7 @@
 export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd "$DOTFILES_DIR" >/dev/null
 git submodule foreach --quiet '
-    if [ -a "$HOME/$path" ] ; then
+    if [ -e "$HOME/$path" ] ; then
         echo "$path already exists"
     else
         ln -s "$DOTFILES_DIR/$path" "$HOME"

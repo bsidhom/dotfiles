@@ -29,6 +29,7 @@ while read -r CONFIG_FILE ; do
     if [ -a "$CONFIG_FILE" ] ; then
         if [ -f "$CONFIG_FILE" ] ; then
             echo "overwriting configuration file: $CONFIG_FILE"
+            cpp "${DOTFILES_DIR}/${CONFIG_FILE}.src" "./${CONFIG_FILE}"
         else
             echo "skipping non-regular file: $CONFIG_FILE"
         fi
