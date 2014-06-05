@@ -8,7 +8,7 @@ DISABLE_AUTO_UPDATE="true"
 #DISABLE_CORRECTION="true"
 #COMPLETION_WAITING_DOTS="true"
 
-plugins=(cabal gnu-utils go golang lein node npm pep8 python rsync sbt scala unison vi-mode zsh-syntax-highlighting)
+plugins=(cabal gnu-utils go golang lein node npm pep8 python rsync sbt scala unison zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,3 +38,4 @@ if [ "x$REMOTE_SESSION_TYPE" != "x1" ] ; then
 fi
 
 setopt no_inc_append_history
+bindkey -v
