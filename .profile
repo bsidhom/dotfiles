@@ -2,8 +2,12 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        source "$HOME/.bashrc"
     fi
+fi
+
+if [ -f "$HOME/.host_settings" ] ; the
+    source "$HOME/.host_settings"
 fi
 
 if [ -d "$HOME/go" ] ; then
