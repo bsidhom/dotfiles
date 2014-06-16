@@ -38,4 +38,5 @@ if [ "x$REMOTE_SESSION_TYPE" != "x1" ] ; then
 fi
 
 setopt no_inc_append_history
+unsetopt auto_cd
 bindkey -v
