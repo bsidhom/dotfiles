@@ -39,4 +39,5 @@ fi
 
 setopt no_inc_append_history
 unsetopt auto_cd
+unsetopt cdable_vars
 bindkey -v
