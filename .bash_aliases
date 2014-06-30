@@ -6,6 +6,11 @@ alias acs="apt-cache search" # search
 alias aar="sudo add-apt-repository" # add a PPA
 
 # pacman-based aliases
+alias pms="sudo pacman -S" # install
+alias pmss="pacman -Ss" # search
+alias pmsyu="sudo pacman -Syu" # update packages
+alias pmq="pacman -Q" # list installed local packages
+
 alias pcs="pacaur -S" # install
 alias pcss="pacaur -Ss" # search
 alias pcsy="pacaur -Sy" # update package list; always follow by package update
