@@ -20,6 +20,9 @@ fi
 if [ -f ~/.zsh_aliases ] ; then
     source ~/.zsh_aliases
 fi
+if [ -f ~/.host_shrc ] ; then
+    source ~/.host_shrc
+fi
 
 # set TERM based on termdetect result
 if [ $(hash termdetect 2>/dev/null && hash perl 2>/dev/null && echo 0) ] ; then

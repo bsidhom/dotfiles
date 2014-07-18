@@ -6,8 +6,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-if [ -f "$HOME/.host_settings" ] ; then
-    source "$HOME/.host_settings"
+if [ -f "$HOME/.host_profile" ] ; then
+    source "$HOME/.host_profile"
 fi
 
 if [ -d "$HOME/go" ] ; then

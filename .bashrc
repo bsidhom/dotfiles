@@ -41,6 +41,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# host-specific settings
+if [ -f ~/.host_shrc ] ; then
+    . ~/.host_shrc
+fi
+
 # bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
