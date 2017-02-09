@@ -5,4 +5,5 @@
 .octaverc
 .profile
 .screenrc
+.tmux.conf
 .zprofile
