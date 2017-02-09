@@ -6,4 +6,3 @@
 .profile
 .screenrc
 .zprofile
-.zshrc

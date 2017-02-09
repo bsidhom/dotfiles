@@ -1,3 +1,4 @@
+# This file is deprecated and no longer installed to the home directory.
 # Path to oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
