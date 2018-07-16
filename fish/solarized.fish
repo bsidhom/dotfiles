@@ -4,24 +4,22 @@
 # example, if "ls -G" produces Solarized output). i.e. if "blue" is #268bd2, not
 # whatever the default is. (See "../etc/Solarized Dark.terminal" for OS X.)
 
-set -l base03  "--bold black"
-set -l base02  "black"
-set -l base01  "--bold green"
-set -l base00  "--bold yellow"
-set -l base0   "--bold blue"
-set -l base1   "--bold cyan"
-set -l base2   "white"
-set -l base3   "--bold white"
-set -l yellow  "yellow"
-#set -l orange  "--bold red"
-#set -l orange  cb4b16
-set -l orange  "brred"
-set -l red     "red"
-set -l magenta "magenta"
-set -l violet  "brmagenta"
-set -l blue    "blue"
-set -l cyan    "cyan"
-set -l green   "green"
+set -l base03  brblack
+set -l base02  black
+set -l base01  brgreen
+set -l base00  bryellow
+set -l base0   brblue
+set -l base1   brcyan
+set -l base2   white
+set -l base3   brwhite
+set -l yellow  yellow
+set -l orange  brred
+set -l red     red
+set -l magenta magenta
+set -l violet  brmagenta
+set -l blue    blue
+set -l cyan    cyan
+set -l green   green
 
 # Use these settings if your terminal supports term256 and your terminal hasn't
 # been configured with a Solarized theme.i.e. if "blue" is the default blue, not
@@ -64,6 +62,6 @@ set -g fish_color_autosuggestion $base01
 # Used by fish_prompt
 
 set -g fish_color_user        $green
-set -g fish_color_cwd         $blue
+set -g fish_color_cwd         --background=$blue $base02
 set -g fish_color_host        $green
 set -g fish_color_cancel      $green
