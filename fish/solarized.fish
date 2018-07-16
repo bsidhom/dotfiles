@@ -45,23 +45,23 @@ set -l green   green
 # Used by fish's completion; see
 # http://fishshell.com/docs/2.0/index.html#variables-color
 
-set -g fish_color_normal      $base0
-set -g fish_color_command     $green
-set -g fish_color_quote       $yellow
-set -g fish_color_redirection $orange
-set -g fish_color_end         $orange
-set -g fish_color_error       $red
-set -g fish_color_param       $base0
-set -g fish_color_comment     $base01
-set -g fish_color_match       $cyan
-set -g fish_color_search_match --background=$base02 $base0
-set -g fish_color_operator    $orange
-set -g fish_color_escape      $orange
-set -g fish_color_autosuggestion $base01
+set -g fish_color_normal          $base0
+set -g fish_color_command         $green
+set -g fish_color_quote           $yellow
+set -g fish_color_redirection     $orange
+set -g fish_color_end             $orange
+set -g fish_color_error           $red
+set -g fish_color_param           $base0
+set -g fish_color_comment         $base01
+set -g fish_color_match           $cyan
+set -g fish_color_search_match    --background=$base02 $base0
+set -g fish_color_operator        $orange
+set -g fish_color_escape          $orange
+set -g fish_color_autosuggestion  $base01
 
 # Used by fish_prompt
 
-set -g fish_color_user        $green
-set -g fish_color_cwd         --background=$blue $base02
-set -g fish_color_host        $green
-set -g fish_color_cancel      $green
+set -g fish_color_user    $green
+set -g fish_color_cwd     --background=$blue $base02
+set -g fish_color_host    $green
+set -g fish_color_cancel  $green
