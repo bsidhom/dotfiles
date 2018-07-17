@@ -42,6 +42,6 @@ function fish_prompt --description 'Write out the prompt'
         case root toor
             printf '%s@%s %s%s# ' $USER (local_prompt_host) (local_prompt_pwd) (set_color normal)
         case '*'
-            printf '%s %s@%s %s %s %s%s \f\r> ' (timestamp) (prompt_user) (local_prompt_host) (prompt_separator) (local_prompt_pwd) (prompt_status "$stat") (set_color normal)
+            printf '%s %s%s@%s%s %s %s %s%s \f\r> ' (timestamp) (prompt_user) (set_color brred) (set_color reset) (local_prompt_host) (prompt_separator) (local_prompt_pwd) (prompt_status "$stat") (set_color normal)
     end
 end
