@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-
 function main
     set -l script_dir (cd (dirname (status -f)); and pwd) 
     if test ! -e ~/.config/fish
@@ -14,8 +13,7 @@ function main
         solarized.fish \
         functions/fish_prompt.fish
     for config_file in $config_files
-        # TODO: Prompt to overwrite if file already exists.
-        ln -s "$script_dir/fish/$config_file" "$HOME/.config/fish/$config_file"
+        ln -is "$script_dir/fish/$config_file" "$HOME/.config/fish/$config_file"
     end
 end
 
