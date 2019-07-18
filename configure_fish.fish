@@ -10,8 +10,12 @@ function main
     end
     set -l config_files \
         config.fish \
+        functions/agu.fish \
+        functions/agup.fish \
         functions/fish_mode_prompt.fish \
         functions/fish_prompt.fish \
+        functions/gconfig.fish \
+        functions/time.fish \
         solarized.fish
     for config_file in $config_files
         ln -is "$script_dir/fish/$config_file" "$HOME/.config/fish/$config_file"
