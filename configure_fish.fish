@@ -10,9 +10,9 @@ function main
     end
     set -l config_files \
         config.fish \
-        solarized.fish \
         functions/fish_mode_prompt.fish \
-        functions/fish_prompt.fish
+        functions/fish_prompt.fish \
+        solarized.fish
     for config_file in $config_files
         ln -is "$script_dir/fish/$config_file" "$HOME/.config/fish/$config_file"
     end
