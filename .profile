@@ -19,6 +19,9 @@ fi
 if [ ! -z "$GOPATH" ] ; then
     PATH="$GOPATH/bin:$PATH"
 fi
+if [ -d "$HOME/.cargo" ] ; then
+  PATH="$HOME/.cargo/bin:$PATH"
+fi
 if [ -d "$HOME/.local" ] ; then
     PATH="$HOME/.local/bin:$HOME/.local/sbin:$PATH"
 fi
